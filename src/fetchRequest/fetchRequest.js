@@ -7,7 +7,7 @@ import axios from "axios"
 let url="https://nim-yad2-back.herokuapp.com/"
 export const loginToSite = async (email, password) => {
     try {
-        const response = await axios.post(`user/login`, { email, password })
+        const response = await axios.post(`${url}user/login`, { email, password })
         return response
     } catch (err) {
         console.log(err)
