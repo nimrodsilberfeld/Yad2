@@ -1,0 +1,156 @@
+.contact_info_input_line {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+.info_item {
+    input {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        &::placeholder {
+            font-size: 14px;
+        }
+    }
+    span {
+        font-size: 14px;
+    }
+}
+.contact_name {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    margin-bottom: 25px;
+}
+.contact_phone_input {
+    @extend .contact_name;
+    width: 52%;
+}
+.phone_section {
+    display: flex;
+    justify-content: space-evenly;
+}
+.phone_zone {
+    width: 31%;
+    ul {
+        li {
+            font-size: 14px;
+        }
+    }
+}
+#checked_number_button {
+    color: #4dd8a1;
+    border: 1px solid #4dd8a1;
+    background-color: #dff7ed;
+    padding: 0 1.6rem 0 1.6rem;
+    box-sizing: border-box;
+    height: 40px;
+    width: 162px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    // padding: 1px 2.2em 1px 1.6em;
+    // background-color: #fff;
+    // color: #ff7100;
+    // border: 1px solid #ff7100;
+}
+.checked_button {
+    width: 20%;
+}
+.add_contact {
+    color: $myOrange;
+    margin-bottom: 1rem;
+    i {
+        font-size: $smallFont;
+        margin-left: 4px;
+    }
+    span {
+        font-size: $smallFont;
+    }
+}
+.checkBox_input {
+    display: inline;
+    margin-bottom: 1rem;
+    input {
+        vertical-align: middle;
+        margin: 0 0 0 5px;
+    }
+    span {
+        font-size: 14px;
+        vertical-align: middle;
+    }
+    i {
+        color: $myOrange;
+        font-size: 12px;
+    }
+}
+.checkBox_inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    input {
+        filter: unset;
+    }
+}
+.checkBox_input_highlight {
+    width: fit-content;
+    background-color: #eee;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    span {
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+    }
+    input {
+        filter: unset;
+    }
+}
+.big_checkbox {
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+    filter: unset !important;
+}
+.orange_span {
+    color: $myOrange !important;
+}
+.info_label_second {
+    &::after {
+        content: " * ";
+        color: #000;
+        position: absolute;
+    }
+}
+.error {
+    border: 1px solid red;
+}
+.errorSpan {
+    color: red;
+    font-size: 13px;
+}
+@media screen and (max-width: 600px) {
+    .contact_info_input_line {
+        flex-direction: column;
+        width: 100%;
+    }
+    .contact_name {
+        width: 100%;
+    }
+    .contact_phone_input {
+        width: 65%;
+    }
+    .phone_zone {
+        width: 29%;
+        button {
+            padding: 11px 15px;
+        }
+    }
+    .checked_button {
+        align-self: baseline;
+    }
+}

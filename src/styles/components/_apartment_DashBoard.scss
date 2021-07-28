@@ -1,0 +1,567 @@
+.apartment_main {
+    display: flex;
+    flex-direction: column;
+    width: 60rem;
+}
+.loader_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+.apartment_feed {
+    width: 85%;
+    margin: 0 auto;
+    height: 100%;
+    max-height: 87px;
+    position: relative;
+
+    border-radius: 2px 0 0 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: max-height 0.3s;
+    &:hover .feed_image {
+        width: 102%;
+        height: 102%;
+    }
+    &:hover {
+        z-index: 15;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+    }
+    &:hover .moreDetails {
+        opacity: 1;
+        visibility: visible;
+    }
+    &:hover .updateToday {
+        opacity: 0;
+        visibility: hidden;
+    }
+    &:hover .plus_image {
+        visibility: visible;
+    }
+}
+.plus_image {
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 35%;
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 7px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        position: absolute;
+        top: 4px;
+        right: 10px;
+        color: black;
+        font-size: 0.875rem;
+    }
+    i {
+        font-size: 25px;
+        color: white;
+        transform: rotate(-90deg);
+    }
+}
+.plus_content {
+    display: flex;
+    justify-content: center;
+}
+.apartment_feed_open {
+    @extend .apartment_feed;
+    max-height: 9999px;
+}
+.color_container {
+    background: $myYellow;
+    display: flex;
+    // justify-content: space-between;
+    max-height: 85px;
+    cursor: pointer;
+}
+.right_col {
+    width: 100%;
+    height: 85px;
+    max-width: 358px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    display: table;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.right_col_open {
+    @extend .right_col;
+    max-width: 500px;
+    border-left: 0;
+}
+.image_container {
+    width: 110px;
+    height: 66px;
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+.image_container_open {
+    @extend .image_container;
+    width: 195px;
+    height: 117px;
+}
+.like_btn {
+    top: 0;
+    right: 0;
+    z-index: 2;
+    position: absolute;
+}
+.like_icon {
+    border-radius: 50px;
+    height: 1.7rem;
+    width: 1.7rem;
+    &:hover i {
+        cursor: pointer;
+        color: $myOrange;
+    }
+}
+.like_btn_wrapper {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+}
+.image_0 {
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.feed_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.heart_icon {
+    display: flex;
+    justify-content: center;
+}
+.rows {
+    display: inline-block;
+    width: 215px;
+    padding: 26px 10px;
+}
+.rows_title {
+    font-size: $bigFont;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.rows_subtitle {
+    font-size: $normalFont;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.0625rem;
+}
+.middle_col {
+    max-width: 213px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    width: 100%;
+    height: 85px;
+}
+.middle_col_open {
+    @extend .middle_col;
+    border-left: 0;
+    bottom: 0;
+    right: 220px;
+    position: absolute;
+    max-width: 195px;
+    height: 60px;
+    justify-content: space-around;
+}
+.left_col {
+    position: relative;
+    max-width: calc(100% - 571px);
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+    padding: 0 5px 0 0;
+    height: 72px;
+    width: 100%;
+}
+.left_col_open {
+    @extend .left_col;
+    align-items: unset;
+}
+.left_title {
+    @extend .rows_title;
+    i {
+        font-size: $smallFont;
+    }
+    overflow: visible;
+}
+.moreDetails {
+    opacity: 0;
+    visibility: hidden;
+    color: $myOrange;
+    font-weight: bold;
+    right: -29px !important;
+}
+.left_hover_items {
+    position: relative;
+}
+.left_span {
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    //transform: translateX(-50%);
+}
+.left_span_open {
+    @extend .left_span;
+    position: unset;
+}
+.updateToday {
+    opacity: 1;
+    visibility: visible;
+}
+.updateToday_open {
+    // @extend .updateToday;
+    opacity: 1;
+    visibility: visible;
+}
+.color_container_open {
+    @extend.color_container;
+    max-height: 138px;
+    position: relative;
+    cursor: pointer;
+}
+
+/////////// ACCORDION
+.accordion {
+    max-height: 999px;
+    width: 100%;
+    font-size: $smallFont;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    z-index: 10;
+}
+.wrapper {
+    max-height: 1000px;
+    width: 100%;
+}
+.contact_seller {
+    height: 35px;
+    width: 180px;
+    float: left;
+    position: absolute;
+    left: 15px;
+    top: -51px;
+}
+.contact_seller_button {
+    padding: 0;
+    height: 100%;
+    width: 90%;
+    background-color: #0fca80;
+    color: white;
+    font-size: 14px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    i {
+        margin-left: 1rem;
+        transform: rotate(-45deg);
+        align-self: flex-end;
+        width: 1rem;
+        font-size: 20px;
+        padding-bottom: 0.4rem;
+    }
+}
+.seller_info {
+    max-height: 250px;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    width: 90%;
+    max-width: 180px;
+    background: white;
+    color: #000;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+}
+.seller_name {
+    padding: 15px;
+    cursor: auto;
+    border-bottom: 1px solid #6d6d6d;
+    text-align: center;
+    span {
+        font-size: $normalFont;
+    }
+}
+.seller_mail {
+    &:hover {
+        color: $myOrange;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+.main_content {
+    background: white;
+    display: block;
+    width: 100%;
+}
+.content {
+    border-top: 1px solid #e5e5e5;
+    width: 100%;
+    display: flex;
+}
+.dynamic_content {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 5px 15px 30px 10px;
+    width: 100%;
+}
+.about_content {
+    padding-bottom: 10px;
+    h3 {
+        font-size: $normalFont;
+    }
+}
+.show_more_content {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+}
+.show-more-container {
+    position: relative;
+    line-height: 1.5rem;
+    overflow: hidden;
+    // --private-max-height: var(--max-height, 200);
+    // max-height: var(--private-max-height);
+}
+.show_more_contents {
+    max-width: 80%;
+    font-size: $normalFont;
+}
+.show_more_contents_short {
+    @extend .show_more_contents;
+    max-height: 40px;
+    overflow: hidden;
+}
+.gardient {
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    height: 1.5rem;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+}
+.read_more {
+    white-space: nowrap;
+    font-size: $normalFont;
+    line-height: 1.0625rem;
+    color: $myOrange;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.show-more-container_open {
+    @extend .show-more-container;
+    .show_more_contents_short {
+        max-height: none;
+    }
+}
+.info_items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+}
+.info_item {
+    line-height: 1.25rem;
+    color: #363636;
+    display: flex;
+    align-items: center;
+    padding: 5px 0 0 5px;
+    width: 100%;
+    span {
+        font-size: $xsmallFont;
+    }
+}
+.info_items div:last-child {
+    span {
+        color: $myOrange;
+        font-weight: bold;
+        text-decoration: underline;
+        i {
+            transform: rotate(-90deg);
+            font-size: 10px;
+        }
+    }
+}
+.info_item_bold {
+    font-weight: bold;
+}
+.additional_info {
+    padding-top: 15px;
+    width: 80%;
+}
+.additional_info_title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    h3 {
+        font-size: $normalFont;
+    }
+    span {
+        font-size: $smallFont;
+        color: $myOrange;
+        i {
+            transform: rotate(-90deg);
+            font-size: 10px;
+        }
+    }
+}
+.items_container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+.info_feature {
+    position: relative;
+    display: inline-block;
+    padding: 5px 30px 15px 10px;
+    width: 25%;
+    span {
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
+    }
+    i {
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
+        margin-left: 3px;
+    }
+    img {
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-left: 3px;
+        vertical-align: middle;
+    }
+}
+.exclude {
+    opacity: 0.5;
+}
+.wrapper_footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem 15px;
+    border-top: 1px solid #8d8d8d;
+    bottom: 0;
+    width: 100%;
+    background: white;
+}
+.share-strip-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    align-items: center;
+}
+.footer_icon {
+    border-radius: 50px;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.whatsapp {
+    background: #3dca43;
+    width: 1.4rem;
+    height: 1.4rem;
+    i {
+        color: white;
+    }
+}
+.facebook {
+    color: #1a73ea;
+    font-size: 22px;
+}
+.facebook_div {
+    width: 1.2rem;
+    height: 1.2rem;
+    align-self: center;
+}
+.mail_icon {
+    background: #d74a58;
+
+    i {
+        color: white;
+        font-size: 12px;
+    }
+}
+.left_side {
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    // width: 40%;
+    h3 {
+        font-weight: bold;
+        font-size: $xsmallFont;
+        margin-left: 5px;
+    }
+    span {
+        font-size: $xsmallFont;
+    }
+}
+@media screen and (max-width: 1113px) {
+    .apartment_main {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .apartment_feed {
+        width: 100%;
+    }
+}
+// @media screen and (max-width: 600px) {
+//     .apartment_feed {
+//         max-height: 9999px;
+//     }
+//     .color_container {
+//         max-height: 138px;
+//     }
+//     .right_col {
+//         max-height: 138px;
+//         position: relative;
+//         cursor: pointer;
+//     }
+//     .image_container {
+//         max-height: 138px;
+//         position: relative;
+//         cursor: pointer;
+//         width: 195px ;
+//         height: 117px ;
+//         // img{
+//         // }
+//     }
+//     .middle_col {
+//         border-left: 0;
+//         bottom: 0;
+//         right: 220px;
+//         position: absolute;
+//         max-width: 195px;
+//         height: 60px;
+//         justify-content: space-around;
+//     }
+// }

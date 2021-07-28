@@ -1,0 +1,45 @@
+.button {
+    position: relative;
+    margin-right: 5px;
+    vertical-align: middle;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    border-radius: 2px;
+    padding: 0 10px 0 15px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    min-width: 170px;
+    height: 2.5rem;
+    text-align: right;
+    color: gray;
+    font-size: $smallFont;
+}
+.y2i {
+    position: absolute;
+    left: 5px;
+    // top: 50%;
+    vertical-align: middle;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    display: inline-block;
+}
+.button_icon {
+    height: 2.5rem;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    text-align: right;
+    // min-width: 120px;
+    font-size: $smallFont;
+    i {
+        vertical-align: middle;
+        font-size: 0.7rem;
+        line-height: 1.5rem;
+        display: inline-block;
+        margin-left: 10px;
+    }
+    &:hover{
+        background-color: rgb(243, 239, 239);
+        cursor: pointer;
+    }
+}

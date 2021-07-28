@@ -1,0 +1,450 @@
+.searchBox {
+    background-color: white;
+    // width: 100%;
+    width: 60rem;
+    height: 10rem;
+    box-shadow: 0 4px 8px 0 rgba(226, 221, 221, 0.2), 0 6px 20px 0 rgba(194, 181, 181, 0.39);
+}
+.searchBox_content {
+    // margin-right: 2rem;
+    width: 96%;
+    margin: 0 auto;
+}
+.input {
+    height: 2.5rem;
+}
+.checkbox {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+}
+.mail {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffa660;
+    width: 210px;
+    height: 30px;
+    justify-content: center;
+    p {
+        font-size: small;
+        color: #ff7507;
+        font-weight: bold;
+    }
+    &:hover {
+        background-color: #ff7507;
+        cursor: pointer;
+        p {
+            color: white;
+        }
+    }
+}
+.searchBox_title {
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 1rem;
+    h2 {
+        font-size: 17px;
+    }
+    span {
+        font-size: 17px;
+        color: $myOrange;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+    }
+}
+.searchBox_inputs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: space-between;
+    width: 98%;
+}
+.searchInput {
+    p {
+        font-size: 13px;
+        margin: 0;
+    }
+    input {
+        width: 100%;
+        height: 2.5rem;
+        &::placeholder {
+            font-size: 15px;
+        }
+    }
+}
+.searchInput_rooms {
+    position: relative;
+    p {
+        font-size: 13px;
+        margin: 0;
+    }
+    input {
+        width: 100%;
+        height: 2.5rem;
+        &::placeholder {
+            font-size: 15px;
+        }
+    }
+}
+.close {
+    transform: rotate(180deg);
+}
+.open {
+    transform: rotate(0deg);
+}
+.propertyButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 2.5rem;
+    width: 130px;
+    background-color: white;
+    border-style: none;
+    border: 1px solid grey;
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
+}
+.roomButton {
+    @extend .propertyButton;
+    width: 100px;
+    cursor: pointer;
+}
+.priceInputsFilter {
+    display: flex;
+    input {
+        width: 100px;
+    }
+}
+.hidden {
+    visibility: hidden;
+}
+.advanceSearchButton {
+    font-size: 15px;
+    @extend .propertyButton;
+    color: rgb(121, 114, 114);
+    align-self: center;
+    background-color: #eeeeee;
+    &:hover {
+        background-color: darken($color: #eeeeee, $amount: 10%);
+    }
+    width: 7rem;
+}
+.smallPng {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+.searchButton {
+    background-color: #ff7507;
+    color: white;
+    width: 6rem;
+    &:hover {
+        background: darken($color: #ff7507, $amount: 7%);
+    }
+}
+.dropdown {
+    z-index: 20;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    // width: 18%;
+    min-width: 280px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+
+    // padding: 1rem;
+    ul {
+        padding: 0;
+        width: 100%;
+        list-style: none;
+    }
+}
+.dropdown_search {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+    &:hover > .dropdown_search_right input {
+        outline: 0.2px solid $myOrange;
+        outline-style: auto;
+    }
+}
+.dropdown_search_right {
+    display: flex;
+    p {
+        font-size: 15px;
+    }
+    input {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+.chooseButton {
+    color: $myOrange;
+    background-color: white;
+    border-style: none;
+    align-self: flex-end;
+    height: 3rem;
+}
+.propertyDropdown {
+    border-bottom: 1px solid rgba(170, 166, 166, 0.19);
+    li {
+        background-color: #f9f9f9;
+        margin-bottom: 0.5rem;
+        height: 3rem;
+        div {
+            align-self: center;
+            padding: 0 0.5rem;
+        }
+    }
+}
+.subDrop_ul {
+    input {
+        width: 1rem;
+        height: 1rem;
+    }
+    p {
+        font-size: 15px;
+    }
+    li {
+        cursor: pointer;
+        background-color: white;
+        display: flex;
+        border-bottom: 0.5px solid rgba(204, 199, 199, 0.19);
+        div {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+        }
+        &:hover {
+            input {
+                outline: 0.2px solid $myOrange;
+                outline-style: auto;
+            }
+        }
+    }
+}
+.dropDownRooms {
+    position: absolute;
+    width: fit-content;
+    right: 50%;
+    transform: translateX(50%);
+}
+.roomButtonDrop {
+    @extend .roomButton;
+    width: 78px;
+}
+.field_content {
+    padding: 17px;
+    font-size: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-width: 213px;
+    min-height: 80px;
+}
+.rooms_content {
+    height: 100%;
+    margin: 0 auto;
+    display: inline-flex;
+}
+.datalist {
+    margin: auto;
+    width: 100%;
+    text-align: right;
+}
+.dropdownRooms {
+    z-index: 20;
+    position: absolute;
+    ul {
+        padding: 0;
+        width: 76%;
+        margin: 0 auto;
+        list-style: none;
+        background-color: white;
+    }
+    display: flex;
+    flex-direction: inherit;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.roomsNumberDropDown {
+    list-style: none;
+    max-height: 320px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    li {
+        font-size: 15px;
+        padding: 11px 10px;
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(243, 239, 239);
+        }
+    }
+}
+.roomsDrop {
+    display: flex;
+}
+
+.buttonBackground1 {
+    padding: 1rem 1rem 1rem 0rem;
+    background-color: white;
+}
+.buttonBackground2 {
+    padding: 1rem 0 1rem 1rem;
+    background-color: white;
+}
+.advanceSearchBox {
+    z-index: 10;
+    position: relative;
+    background-color: white;
+    width: 100%;
+    max-width: 960px;
+    box-shadow: 0 4px 8px 0 rgba(226, 221, 221, 0.2), 0 6px 20px 0 rgba(194, 181, 181, 0.39);
+    border-top: 1px solid #ccc;
+}
+.advanceSearchBox_content {
+    width: 100%;
+}
+.advanceSearch_title {
+    display: block;
+    margin: 30px 40px 0 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.advanceSearch_row {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px 0;
+    margin: 0 40px;
+    border-bottom: 1px solid #ccc;
+}
+.advanceSearch_col {
+    padding: 10px;
+    width: 20%;
+    input {
+        width: 1rem;
+        height: 1rem;
+        vertical-align: middle;
+    }
+}
+.advanceSearch_col2 {
+    padding: 10px;
+}
+.range_select_wrapper {
+    display: block;
+    width: 100%;
+    font-size: 14;
+}
+// .testDrop {
+//     position: relative;
+// }
+.fixedRoomButton {
+    @extend .roomButton;
+    width: 120px;
+}
+// .testDropDownContent {
+//     right: 50%;
+//     transform: translateX(5%);
+//     top: calc(100% + 15px);
+// }
+.fixedDataList {
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 120px;
+    //width: inherit;
+    padding: 0;
+    li {
+        padding: 11px 10px;
+        width: 100%;
+        font-size: 14px;
+    }
+}
+.right_element {
+    margin-left: 0.4rem;
+}
+.buttons_wrapper {
+    display: flex;
+}
+.input_text {
+    width: 120px;
+    height: 2.5rem;
+}
+.date_check {
+    display: flex;
+}
+.input[type="date"] {
+    //text-align: right;
+    width: unset;
+}
+
+
+.free_search {
+    display: flex;
+    flex-direction: column;
+    // input {
+    //     width: 40%;
+    // }
+}
+.advance_text {
+    width: 30%;
+}
+.align_checkbox {
+    align-self: flex-end;
+}
+.checkbox_and_text {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+.final_row {
+    display: flex;
+    width: -50%;
+    justify-content: space-between;
+}
+.cleanButton {
+    background: white;
+    border-style: none;
+}
+@media screen and (max-width: 1113px) {
+    .searchBox {
+        width: 100%;
+    }
+    .searchBox_title{
+        margin: 0 auto;
+    }
+    .searchBox_content {
+        width: 100%;
+    }
+    .searchBox_inputs {
+        margin: 0 auto;
+    }
+    .searchBox_inputs {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .searchButton {
+        width: 5rem !important;
+    }
+    .propertyButton {
+        width: 117px;
+    }
+    .left_rooms {
+        width: 94px;
+    }
+    .location_input {
+        width: 150px !important;
+    }
+    .price_input{
+        width: 80px !important;
+    }
+}

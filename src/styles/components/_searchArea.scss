@@ -1,0 +1,29 @@
+.suggestion_list {
+    background-color: #fff;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    border: 1px solid #ccc;
+    min-width: 250px;
+    line-height: 2rem;
+    padding-right: 15px;
+    margin-top: 0;
+    li {
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        &:hover {
+            background-color: #f4f4f4;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .suggestion_list {
+        width: 85%;
+        line-height: 2.2rem;
+        li{
+            font-size: 1.2rem;
+        }
+    }
+}

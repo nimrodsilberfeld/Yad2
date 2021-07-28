@@ -1,0 +1,145 @@
+.footer {
+    background-color: #363636;
+    padding: 50px 0 10px;
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+}
+.footer_text {
+    font-size: 0.675rem;
+    line-height: 1.0625;
+    margin: 20px auto;
+    width: 840px;
+    color: #999;
+}
+.category_links {
+    width: 940px;
+    margin: 40px auto auto;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    section {
+        flex: 0.1;
+        ul {
+            list-style: none;
+            margin-top: 15px;
+            padding: 0;
+        }
+    }
+}
+.title_section {
+    font-size: 1rem;
+    line-height: 1.1875rem;
+}
+.sub_cut_link {
+    font-size: $xsmallFont;
+    line-height: 1.0675rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.two_cols {
+    flex: 0.2 !important;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 220px;
+        flex-direction: column;
+    }
+}
+.social_links {
+    width: 180px;
+    display: flex;
+    margin: 30px auto;
+    justify-content: space-between;
+}
+.footer_black {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    i {
+        font-size: 1.3rem;
+    }
+    img {
+        width: 1.1rem;
+        height: 1.1rem;
+        vertical-align: middle;
+    }
+}
+.facebook_i {
+    font-size: 15px !important;
+}
+.copyrignts_text {
+    margin: 20px auto;
+    width: 580px;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    color: #999;
+}
+.footer_hr {
+    width: 420px;
+    border: 0.5px solid #606060;
+    margin: auto;
+}
+.footer_menu {
+    width: 540px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    span {
+        font-size: 0.875rem;
+        color: #999;
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+@media screen and (max-width: 1113px) {
+    .footer_text {
+        width: 90%;
+    }
+    .category_links {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 600px) {
+    .social_links{
+        width: 60%;
+
+    }
+    .copyrignts_text{
+        width: 80%;
+    }
+    .footer_hr{
+        width: 90%;
+    }
+    .footer_menu{
+        width: 90%;
+    }
+    .category_links{
+        width: 80%;
+
+        section{
+            flex: unset;
+        }
+    }
+    .title_section{
+        font-size: 1.2rem;
+    }
+    .footer_black{
+        width: 2rem;
+        height: 2rem;
+    }
+    .facebook_i{
+        font-size: 18px !important;
+    }
+}
